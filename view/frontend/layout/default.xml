@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Magemontreal <support@magemontreal.com>
+ * @copyright 2021 Magemontreal. All Rights Reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <block name="free.shipping.banner" template="MageMontreal_FreeShippingPromo::free-shipping-banner.phtml" before="-">
+                <arguments>
+                    <argument name="message_view_model" xsi:type="object">MageMontreal\FreeShippingPromo\ViewModel\Message</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

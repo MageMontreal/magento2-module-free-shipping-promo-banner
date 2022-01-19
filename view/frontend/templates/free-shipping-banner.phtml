@@ -1,0 +1,30 @@
+<?php
+/**
+ * @author    Magemontreal <support@magemontreal.com>
+ * @copyright 2021 Magemontreal. All Rights Reserved.
+ */
+
+/* @var $block Magento\Framework\View\Element\Template */
+/* @var $messageViewModel \MageMontreal\FreeShippingPromo\ViewModel\Message */
+
+$messageViewModel = $block->getData('message_view_model');
+?>
+<?php if ($messageViewModel->getIsEnabled()): ?>
+    <div id="free-shipping-banner" data-bind="scope: 'free-shipping-banner-component'">
+        <!--ko template: getTemplate() --><!-- /ko -->
+    </div>
+    <script type="text/x-magento-init">
+        {
+            "#free-shipping-banner": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "free-shipping-banner-component": {
+                            "component":"MageMontreal_FreeShippingPromo/js/free-shipping-banner",
+                            "config": <?= $messageViewModel->getConfig() ?>
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<?php endif; ?>
